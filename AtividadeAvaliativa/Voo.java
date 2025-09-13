@@ -1,24 +1,28 @@
 public class Voo{
-    private String numVoo;
-    private String áreaDeEmbarque;
+    private int  numVoo;
+    private String areaDeEmbarque;
     private String destinoFinal;
-    private int qtdPassageiros;
+    private int qtdPassageiro;
     private Passageiro[] vetPassageiros;
 
+    public Voo(){
+        this.vetPassageiros = new Passageiro[50];
+    }
+
     /* get e set do Nº do vôo */
-    public String getNumVoo() {
+    public int getNumVoo() {
         return numVoo;
     }
-    public void setNumVoo(String numVoo) {
+    public void setNumVoo(int numVoo) {
         this.numVoo = numVoo;
     }
 
     /* get e set da área de embarque */
-    public String getÁreaDeEmbarque() {
-        return áreaDeEmbarque;
+    public String getAreaDeEmbarque() {
+        return areaDeEmbarque;
     }
-    public void setÁreaDeEmbarque(String áreaDeEmbarque) {
-        this.áreaDeEmbarque = áreaDeEmbarque;
+    public void setAreaDeEmbarque(String areaDeEmbarque) {
+        this.areaDeEmbarque = areaDeEmbarque;
     }
 
     /* get e set do destino final */
@@ -31,22 +35,25 @@ public class Voo{
 
     /* get e set da quantidade de passageiros */
     public int getQtdPassageiros() {
-        return qtdPassageiros;
+        return qtdPassageiro;
     }
-    public void setQtdPassageiros(int qtdPassageiros) {
-        this.qtdPassageiros = qtdPassageiros;
+    public void setQtdPassageiros(int qtdPassageiro) {
+        this.qtdPassageiro = qtdPassageiro;
     }
 
     /* get e set do vetor de passageiros */
-    public Passageiro getPassageiros(int pos) {
+    public Passageiro getPassageiro(int pos) {
         return vetPassageiros[pos];
     }
-    public void setPassageiros(Passageiro p) {
-        if(this.qtdPassageiros < 50){
-            this.vetPassageiros[qtdPassageiros] = p;
-            qtdPassageiros++;
+    public void setPassageiro(Passageiro p) {
+        if(this.qtdPassageiro < 50){
+            this.vetPassageiros[qtdPassageiro] = p;
+            qtdPassageiro++;
         }
     }
 
-    
+    public int qtdAssentosLivres(){
+        int assentos = 50;
+        return (assentos - this.qtdPassageiro);
+    }
 }

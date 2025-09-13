@@ -3,12 +3,14 @@ public class Turma {
     private String nomeCurso;
     private int anoIngresso;
     private int qtdAlunos;
-    private Aluno[] vetAlunos;
+    private Aluno[] vetorAlunos;
 
     public Turma(){
-        this.vetAlunos = new Aluno[40];
+        this.vetorAlunos = new Aluno[40];
     }
-
+    
+    // Metodos Getter, Setter
+    /* numTurma */
     public int getNumTurma() {
         return numTurma;
     }
@@ -16,6 +18,7 @@ public class Turma {
         this.numTurma = numTurma;
     }
 
+    /* NomeCurso */
     public String getNomeCurso() {
         return nomeCurso;
     }
@@ -23,6 +26,7 @@ public class Turma {
         this.nomeCurso = nomeCurso;
     }
 
+    /* AnoIngresso */
     public int getAnoIngresso() {
         return anoIngresso;
     }
@@ -30,6 +34,7 @@ public class Turma {
         this.anoIngresso = anoIngresso;
     }
 
+    /* qtdAlunos */
     public int getQtdAlunos() {
         return qtdAlunos;
     }
@@ -37,13 +42,16 @@ public class Turma {
         this.qtdAlunos = qtdAlunos;
     }
 
+    /* Alunos */
     public Aluno getAluno(int pos) {
-        return vetAlunos[pos];
+        return vetorAlunos[pos]; // Retorna o aluno na posição do vetor indicada
     }
     public void setAluno(Aluno a) {
-        if(this.qtdAlunos < 40){            
-            this.vetAlunos[qtdAlunos] = a;
+        if(this.qtdAlunos < 40){
+            this.vetorAlunos[qtdAlunos] = a; // Salva aluno no final(indicado pela variavel qtdAlunos)
             qtdAlunos++;
         }
-    }
+    } 
+
+    
 }

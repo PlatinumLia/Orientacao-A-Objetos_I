@@ -1,13 +1,15 @@
 public class Escola {
     private String nome;
-    private String fone;
+    private String tel;
     private int qtdTurmas;
-    private Turma[] vetTurmas;
+    private Turma[] vetorTurmas;
 
     public Escola(){
-        this.vetTurmas = new Turma[20];        
+        this.vetorTurmas = new Turma[20];
     }
 
+    // Metodos Getter, Setter
+    /* Nome */
     public String getNome() {
         return nome;
     }
@@ -15,27 +17,34 @@ public class Escola {
         this.nome = nome;
     }
 
-    public String getFone() {
-        return fone;
+    /* Telefone */
+    public String getTel() {
+        return tel;
     }
-    public void setFone(String fone) {
-        this.fone = fone;
+    public void setTel(String tel) {
+        this.tel = tel;
     }
 
+    /* qtdTurmas */
     public int getQtdTurmas() {
         return qtdTurmas;
     }
+
     public void setQtdTurmas(int qtdTurmas) {
         this.qtdTurmas = qtdTurmas;
     }
 
-    public Turma getTurmas(int pos) {
-        return vetTurmas[pos];
+    /* Turmas */
+    public Turma getTurma(int pos) {
+        return vetorTurmas[pos];
     }
-    public void setTurmas(Turma t) {
-        if(this.qtdTurmas < 20){
-            this.vetTurmas[qtdTurmas] = t;
+
+    public void setTurma(Turma t) {
+        if(this.qtdTurmas < 20){    
+            this.vetorTurmas[qtdTurmas] = t;
             qtdTurmas++;
         }
     }
+
+
 }
