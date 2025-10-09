@@ -1,8 +1,6 @@
 import java.io.BufferedReader;
 import java.io.FileReader;
 
-// 4 -Valor total das vendas à prazo
-
 public class Vendas{
     @SuppressWarnings("StringEquality")
     public static void main(String[] args) throws Exception{
@@ -26,8 +24,8 @@ public class Vendas{
             //valor total das vendas à vista
             if(vetVenda[3].equals("V")){
                 somaVista += Float.parseFloat(vetVenda[2].replace(",", "."));
-            }else{
-               somaPrazo += Float.parseFloat(vetVenda[2].replace(",", "."));
+            }else{//valor total das vendas à prazo
+                somaPrazo += Float.parseFloat(vetVenda[2].replace(",", ".")); 
             }
             i++;//quantidade de vendas realizadas
         }
