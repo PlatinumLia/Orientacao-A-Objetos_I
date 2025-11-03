@@ -6,9 +6,19 @@ import java.io.InputStreamReader;
 
 public class ProgramaV2 {
     public static void main(String[] args) throws Exception{
+        //lendo o teclado
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in)); 
+        System.out.println("Margem de lucro dos produtos: ");
+        float margem = Float.parseFloat(reader.readLine());
+        if(margem <= 0){ //verifica se a margem digitada foi menor ou igual a 0
+                        // caso tenha sido, impede o programa de continuar
+            System.out.println("Impossível de calcular a margem!");
+            return;
+        }
+
         //lendo o arquivo de entrada
         String arqEntrada;
-        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        reader = new BufferedReader(new InputStreamReader(System.in));
         System.out.println("Nome do arquivo de entrada (coloque '.csv' no final):");
         arqEntrada = reader.readLine();
         if(arqEntrada.equals("")){ //verifica o nome do arquivo de entrada
@@ -36,10 +46,6 @@ public class ProgramaV2 {
         String linhaCompra = "codigo;estoque;produto;preco_custo;categoria";
         compra.write(linhaCompra);
         compra.newLine();
-
-        reader = new BufferedReader(new InputStreamReader(System.in)); 
-        System.out.println("Margem de lucro dos produtos: ");
-        float margem = Float.parseFloat(reader.readLine());
         
         linha = custo.readLine();
         while((linha = custo.readLine()) != null){
