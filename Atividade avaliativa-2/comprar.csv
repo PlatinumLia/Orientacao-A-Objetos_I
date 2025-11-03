@@ -1,0 +1,5 @@
+codigo;estoque;produto;preco_custo;categoria
+3;3;Caneta Bic;1.23;papelaria
+12;1;Televisor 32”;880.0;eletro
+13;7;Celular xing ling;399.99;eletro
+4;6;Televisor 55”;2102.0;eletro

@@ -41,8 +41,9 @@ public class Programa{
             float precoCusto = Float.parseFloat(vetCampos[3].replace(",", "."));
             float valorVenda = precoCusto * (1 + margem / 100);
             String precoVenda = String.format("%.2f", valorVenda);
-            
-            venda.write(codigo + ";" + nome + ";" + precoVenda);
+            linha = codigo + ";" + nome + ";" + precoVenda;
+
+            venda.write(linha);
             venda.newLine();
         }
         venda.close();
