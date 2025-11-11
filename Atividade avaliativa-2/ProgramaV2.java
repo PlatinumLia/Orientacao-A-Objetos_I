@@ -10,7 +10,7 @@ public class ProgramaV2 {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in)); 
         System.out.println("Margem de lucro dos produtos: ");
         float margem = Float.parseFloat(reader.readLine());
-        if(margem < 0){ //verifica se a margem digitada foi menor ou igual a 0
+        if(margem < 0){ //verifica se a margem digitada foi menor que 0
                         // caso tenha sido, impede o programa de continuar
             System.out.println("Impossível de calcular a margem!");
             return;
