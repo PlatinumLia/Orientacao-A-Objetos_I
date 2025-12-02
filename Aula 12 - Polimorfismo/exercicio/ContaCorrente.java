@@ -1,52 +1,44 @@
-public class ContaCorrente{
-    private int numConta;
+
+public class ContaCorrente {
+    private String numeroConta;
     private String nomeCliente;
     private double saldo;
 
-    //Métodos:
-    //depositar uma quantia:
-    public float depositar(float quantia){
-        return this.saldo = quantia;
+    public String getNumeroConta(){
+        return this.numeroConta;
     }
 
-    //sacar uma quantia:
-    public float sacar(float quantia){
-        float valorSaque = (quantia - 0.05f);
-
-        return valorSaque;
+    public void setNumeroConta(String nc){
+        this.numeroConta = nc;
     }
 
-    //Getters e Setters
-    /* Get e Set do número da conta */
-    public int getNumConta() {
-        return numConta;
-    }
-    public void setNumConta(int numConta) {
-        this.numConta = numConta;
+    public String getNomeCliente(){
+        return this.nomeCliente;
     }
 
-    /* Get e Set do nome do cliente */
-    public String getNomeCliente() {
-        return nomeCliente;
-    }
-    public void setNomeCliente(String nomeCliente) {
-        this.nomeCliente = nomeCliente;
+    public void setNomeCliente(String cli){
+        this.nomeCliente = cli;
+    }    
+
+    public double getSaldo(){
+        return this.saldo;
     }
 
-    /* Get e Set do saldo */
-    public double  getSaldo() {
-        return saldo;
-    }
-    public void setSaldo(float saldo) {
-        this.saldo = saldo;
+    public void setSaldo(double s){
+        this.saldo = s;
+    } 
+
+    public void depositar(double valor){
+        this.saldo += valor;
     }
 
     public boolean sacar(double valor){
         boolean resultado = false;
-        double taxa = 0.05d;
-
-        if(this.saldo >= valor){
-
+        double taxa = 0.005d;
+        if(this.saldo >= (valor + (valor * taxa))){
+            this.saldo = this.saldo - valor - (valor * taxa);
+            resultado = true;
         }
+        return resultado;
     }
 }
