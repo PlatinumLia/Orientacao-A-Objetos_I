@@ -1,8 +1,6 @@
-import java.util.Date;
-
 public class EncomendaNormal{
     private int numPedido;
-    private Date dataPostagem;
+    private String dataPostagem;
     private double peso;
 
     //Getters e Setters
@@ -13,10 +11,10 @@ public class EncomendaNormal{
         this.numPedido = numPedido;
     }
 
-    public Date getDataPostagem() {
+    public String getDataPostagem() {
         return dataPostagem;
     }
-    public void setDataPostagem(Date dataPostagem) {
+    public void setDataPostagem(String dataPostagem) {
         this.dataPostagem = dataPostagem;
     }
 
@@ -28,7 +26,7 @@ public class EncomendaNormal{
     }
 
     //método para calcular o frete
-    public double calcularFrete(double precoKg, double peso){
+    public double calcularFrete(double precoKg){
         double frete = peso * precoKg;
 
         return frete;
