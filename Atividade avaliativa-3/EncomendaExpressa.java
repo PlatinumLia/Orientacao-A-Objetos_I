@@ -20,13 +20,12 @@ public class EncomendaExpressa extends EncomendaNormal{
 
     @Override
     public double calcularFrete(double precoKg) {
-        double frete = 0;
+        double frete;
 
         if(this.prazoEntrega >= 3){ //verifica se o prazo é igual ou maior que 3 dias
             frete = this.getPeso() * precoKg;    
-        }
-        if(this.prazoEntrega <= 2){ //verifica se o prazo é igual ou menor que 2 dias
-            frete = (precoKg * this.getPeso()) * (1 + (25/100));
+        }else{ //verifica se o prazo é igual ou menor que 2 dias
+            frete = (precoKg * this.getPeso()) * 1.25;
         }
         
         return frete;
